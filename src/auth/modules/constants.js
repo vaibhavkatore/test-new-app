@@ -1,0 +1,15 @@
+import mirrorkey from 'mirrorkey';
+
+export default mirrorkey([
+  'POST_LOGIN_REQUEST',
+  'POST_LOGIN_SUCCESS',
+  'POST_LOGIN_FAIL',
+  'POST_SIGNUP_REQUEST',
+  'POST_SIGNUP_SUCCESS',
+  'POST_SIGNUP_FAIL',
+  'LOGOUT_REQUEST',
+  'GET_USER_REQUEST',
+  'GET_USER_REQUEST_FAIL',
+  'GET_USER_REQUEST_SUCCESS'
+  
+]);
