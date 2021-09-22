@@ -1,10 +1,7 @@
 import Constants from './constants';
 import { URL } from '../../env';
 
-
-
-
-const getUser = (handleSuccess,handleError) => {
+const getJobs = (handleSuccess, handleError) => {
     return function (dispatch) {
         dispatch({
             type: Constants.GET_USER_REQUEST
@@ -13,9 +10,8 @@ const getUser = (handleSuccess,handleError) => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authorization': 'Bearer ' + token
             }
-           
+
         })
             .then(response => response.json().then(body => ({ response, body })))
             .then(({ response, body }) => {
@@ -37,5 +33,5 @@ const getUser = (handleSuccess,handleError) => {
 }
 
 export default {
-    getUser
+    getJobs
 };

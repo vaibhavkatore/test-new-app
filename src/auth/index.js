@@ -1,5 +1,5 @@
 import React from "react";
-import UserList from "./container/UserList";
+import JobList from "./container/JobList";
 
 
 
@@ -7,6 +7,6 @@ export default [
 	{
 		path: "/",
 		exact: true,
-		component: () =>  <UserList/>
+		component: () =>  <JobList/>
 	}
 ];
