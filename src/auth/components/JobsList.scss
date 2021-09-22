@@ -1,0 +1,34 @@
+.job-list-container-outer{
+    h1{
+        font-size: 33px;
+        font-weight: 700;
+        border-bottom: 2px solid #000000; 
+        margin-top: 15px;
+    }
+.job-list-container{
+    h2{
+        margin: 0;
+        
+    font-size: 25px;
+        font-weight: 700;
+    }
+
+    p{
+        font-size: 17px;
+    }
+    .apply-button{
+        border-radius: 24px;
+        border: 1px solid;
+        height: 42px;
+        width: 81px;
+        margin-right: 19px;
+        border-color: #2a2aff;
+        color: #2a2aff;
+    }
+    .view-button{
+        border: none;
+        font-weight: 700;
+        color: #807d7d;
+    }
+}
+}

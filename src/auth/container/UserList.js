@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import UserListMarkup from '../components/UserListMarkup'
+import UserFilterMarkup from '../components/UserFilter'
+import JobList from '../components/JobList'
+
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import actions from '../modules/actions'
@@ -13,11 +15,7 @@ class UserList extends Component{
         }
     }
 componentDidMount(){
-    if(!this.props.isUserLoggedIn){
-    this.props.history.push('/login')
-
-    }else{
-        const token = JSON.parse(localStorage.getItem("test_user")).data.api_token  
+  
         const handleError=()=>{
             message.error("unable to fetch")
         }
@@ -25,24 +23,24 @@ componentDidMount(){
         const handleSuccess=(body)=>{
             console.log(body,">>>>>>>");
         }
-        this.props.actions.getUser(handleSuccess,handleError,token)
-    }
-
+        this.props.actions.getUser(handleSuccess,handleError)
   
 }
 
-onLogout=()=>{
-    this.props.history.push('/login')
-    localStorage.removeItem('test_user')
-}
     render(){
         const { userlist } = this.props
+        console.log(userlist,"userlistuserlist");
         return(
-            <UserListMarkup
+            <>
+            <UserFilterMarkup
             isLoading={this.props.isLoading}
             userlist={userlist}
-            onLogout={this.onLogout}
             />
+            <JobList
+            
+            />
+            </>
+            
         )
     }
 }
