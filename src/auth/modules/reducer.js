@@ -28,6 +28,25 @@ export default (state = INITIAL_STATE, action) => {
                 isLoading: false
 
             };
+            case Constants.GET_JOB_DETAIL_REQUEST:
+                return {
+                    ...state,
+                    isLoading: true
+                };
+            case Constants.GET_JOB_DETAIL_REQUEST_SUCCESS:
+                return {
+                    ...state,
+                    jobList: action.payload,
+                    isLoading: false
+    
+                };
+            case Constants.GET_JOB_DETAIL_REQUEST_FAIL:
+                return {
+                    ...state,
+                    error: action.error,
+                    isLoading: false
+    
+                };
         default:
             return state;
     }
